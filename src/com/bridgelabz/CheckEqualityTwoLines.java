@@ -27,19 +27,20 @@ public class CheckEqualityTwoLines {
         a=Math.pow((x2-x1),2);
         b=Math.pow((y2-y1),2);
         double lengthOfLine1=Math.sqrt(a+b);
-        String s1 = String.valueOf(lengthOfLine1);
         System.out.println("Length of Line: "+lengthOfLine1);
 
 
         p=Math.pow((x22-x11),2);
         q=Math.pow((y22-y11),2);
         double lengthOfLine2=Math.sqrt(p+q);
-        String s2 = String.valueOf(lengthOfLine2);
         System.out.println("Length of Line 2 : "+lengthOfLine2);
-        if(s1.equals(s2))
-            System.out.println("Both lines are equal");
-        else
-            System.out.println("Both lines are not equal.");
+        if(Double.compare(lengthOfLine1,lengthOfLine2)>0)
+            System.out.println("Length of line 1 is greater than length of line 2");
+        else if(Double.compare(lengthOfLine1,lengthOfLine2)<0)
+            System.out.println("Length of line 1 is less than length of line 2");
+        else {
+            System.out.println("Length of line 1 is Equal to length of line 2");
+        }
     }
 
     public static void main(String[] args) {
